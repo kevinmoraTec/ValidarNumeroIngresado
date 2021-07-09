@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200">
+
+
+    <TextView
+        android:layout_margin="12dp"
+        android:id="@+id/tvinicio"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Type a Numberr "></TextView>
+
+    <EditText
+        android:layout_margin="3dp"
+        android:id="@+id/etNumber"
+        android:inputType="number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Escribe tu numero"
+
+          ></EditText>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"></Space>
+
+    <Button
+        android:id="@+id/botonAdivina"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adivinar Numero"
+        tools:ignore="InvalidId"></Button>
+
+
+
+
+</LinearLayout>
