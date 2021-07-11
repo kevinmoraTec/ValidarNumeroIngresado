@@ -2,41 +2,55 @@ package com.example.numeroalazar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Button validarRespuesta;
-    private TextView numeroU;
-    public int numeroUsuario;
+    private EditText numeroU;
+
     private int numR;
+    int valorC;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         // Union xml
-        numeroU =(TextView) findViewById(R.id.tvinicio);
+
         numR=crearAleatorio();
+        System.out.println("Aleatorio"+crearAleatorio());
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inicio);
        validarRespuesta=(Button) findViewById(R.id.botonAdivina);
         validarRespuesta.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                  numeroU= findViewById(R.id.etNumber);
+                 String num = numeroU.getText().toString();
+                  valorC = Integer.parseInt(num);
+
                 Intent i = new Intent(MainActivity.this, palatially.class);
+                i.putExtra("Usuario",valorC);
                 startActivity(i);
-                numeroUsuario= Integer.parseInt(numeroU.toString());
+                //System.out.println("Nuemro Usuario"+valorC);
+
 
 
             }
+
+
         });
     }
     @Override
     protected void onStart() {
         super.onStart();
+
     }
 
     @Override
@@ -55,13 +69,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public int crearAleatorio(){
-     return (int) (Math.random()*10+1);
+     return (int) (Math.random()*10);
     }
-    public void validarRept(){
-        if(numR == numeroUsuario){
-            System.out.println("no es valido");
-            System.out.println(numR);
-            System.out.println(numeroUsuario);
-        }
-    }
+
+
 }

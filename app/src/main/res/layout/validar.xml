@@ -14,11 +14,36 @@
         android:textSize="25sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="El numero que Ingresaste fue "></TextView>
+        android:text="USUARIO"></TextView>
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="30dp"></Space>
+
+    <TextView
+        android:id="@+id/tvnumRandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:text="RANDOM"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+
+        ></TextView>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"></Space>
+
+    <TextView
+        android:id="@+id/tvvalidar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:text="validar"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+
+        ></TextView>
 
     <Button
         android:id="@+id/botoregresar"

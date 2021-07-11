@@ -3,4 +3,5 @@
     <string name="verdadero">El numero fue Parecido </string>
     <string name="falso">El numero fue falso </string>
     <string name="regresar">REGRESAR</string>
+    <string name="inicio">Bienvenido! Ingresa un Numero</string>
 </resources>
