@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,23 +19,25 @@ public class palatially extends AppCompatActivity {
     private TextView tvnumIgresaste;
     private TextView tvnumRandom;
     private TextView tvvalidar;
+    //private EditText etNumberRandom;
     private int numRandomF;
     private int numF;
-    private String respuesta;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.validar);
-        numRandomF=numRandom();
-        respuesta =validarResp();
+        //numRandomF=numRandom();
+
         regresar=(Button) findViewById(R.id.botoregresar);
         tvnumIgresaste= (TextView) findViewById(R.id.tvnumIgresaste);
         tvnumRandom = (TextView) findViewById(R.id.tvnumRandom);
         tvvalidar = (TextView) findViewById(R.id.tvvalidar);
+        numRandomF=getIntent().getIntExtra("Random",2);
          numF = getIntent().getIntExtra("Usuario",2);
         tvnumIgresaste.setText("El Numero que Ingresaste : "+numF);
         tvnumRandom.setText("Numero Random : "+numRandomF);
-        tvvalidar.setText(respuesta);
+        validarResp();
 
 
 
@@ -68,17 +71,17 @@ public class palatially extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public int numRandom(){
-        return (int) (Math.random() * 10) + 1;
-    }
+    //public int numRandom(){
+      //  return (int) (Math.random() * 10) + 1;
+    //}
 
-    public String validarResp(){
-        String correcto = "Casi lo Logras";
-        String incorrecto = "Felicidades";
+    public void validarResp(){
+        String incorrecto = "Casi lo Logras";
+        String correcto = "Felicidades !!" ;
         if (numF == numRandomF){
-            return incorrecto;
+            tvvalidar.setText(correcto);
         }else{
-            return correcto;
+            tvvalidar.setText(incorrecto);
         }
     }
 

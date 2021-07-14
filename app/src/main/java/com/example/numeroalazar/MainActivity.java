@@ -13,16 +13,17 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     private Button validarRespuesta;
     private EditText numeroU;
-
     private int numR;
     int valorC;
+    private EditText random;
+    private int randomFin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         // Union xml
 
-        numR=crearAleatorio();
-        System.out.println("Aleatorio"+crearAleatorio());
+        //numR=crearAleatorio();
+        System.out.println("Aleatorio"+numRandom());
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inicio);
@@ -32,11 +33,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                   numeroU= findViewById(R.id.etNumber);
+                  random=findViewById(R.id.etNumberRandom);
                  String num = numeroU.getText().toString();
+                 String numR= random.getText().toString();
                   valorC = Integer.parseInt(num);
+                  randomFin=Integer.parseInt(numR);
+                  int randomEnvio = numRandom();
 
                 Intent i = new Intent(MainActivity.this, palatially.class);
                 i.putExtra("Usuario",valorC);
+                i.putExtra("Random",randomEnvio);
                 startActivity(i);
                 //System.out.println("Nuemro Usuario"+valorC);
 
@@ -68,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public int crearAleatorio(){
-     return (int) (Math.random()*10);
+    public int numRandom(){
+        return (int) (Math.random() * randomFin) + 1;
     }
 
 

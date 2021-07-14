@@ -4,4 +4,6 @@
     <string name="falso">El numero fue falso </string>
     <string name="regresar">REGRESAR</string>
     <string name="inicio">Bienvenido! Ingresa un Numero</string>
+    <string name="ingresaRandom">Escribe rango de Numeros</string>
+
 </resources>
